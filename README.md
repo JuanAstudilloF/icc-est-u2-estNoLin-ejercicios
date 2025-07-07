@@ -60,10 +60,13 @@ src/
 ### Ejercicio 01: Insertar en un Árbol Binario de Búsqueda (BST)
 
 Carpeta: `Ejercicio_01_insert`
-Implementa un algoritmo para insertar nodos en un Árbol Binario de Búsqueda.
-
- **Input de ejemplo:** `[5, 3, 7, 2, 4, 6, 8]`
- **Output esperado:**
+- Implementa un árbol BST donde:
+  - Los valores menores al nodo van al subárbol izquierdo.
+  - Los valores mayores van al subárbol derecho.
+- Método principal: `insert(int value)`
+- Recorrido utilizado para mostrar resultados: **in-order**
+- Entrada de prueba: `[5, 3, 7, 2, 4, 6, 8]`
+- Salida esperada: `2 3 4 5 6 7 8`
 
 ```
     5
@@ -75,24 +78,16 @@ Implementa un algoritmo para insertar nodos en un Árbol Binario de Búsqueda.
 
 ### Ejercicio 02: Invertir un Árbol Binario
 
-📂 Carpeta: `Ejercicio_02_invert`
-Dada la raíz de un árbol binario, el algoritmo devuelve su versión invertida (espejo).
-
- **Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3 6  9
-```
-
-**Output esperado:**
-
-```
-    4
-  7   2
-9  6 3  1
-```
+- Implementa una función recursiva que invierte un árbol binario.
+- Cada subárbol izquierdo pasa a ser derecho y viceversa.
+- Método principal: `invertTree(Node root)`
+- Árbol de ejemplo:
+  ```
+      4           4
+     / \         / \
+    2   7  =>   7   2
+   / \ / \     / \ / \
+  1  3 6  9   9  6 3  1
 
 ---
 
@@ -101,21 +96,15 @@ Dada la raíz de un árbol binario, el algoritmo devuelve su versión invertida 
 📂 Carpeta: `Ejercicio_03_listLeves`
 Devuelve una lista enlazada con los nodos por nivel. Si hay N niveles, se obtienen N listas.
 
- **Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3 6  9
-```
-
-**Output esperado:**
-
-```
-4  
-2 → 7  
-1 → 3 → 6 → 9
-```
+- Implementa una función que devuelve una lista enlazada por cada nivel del árbol.
+- Utiliza BFS con cola 
+- Método principal: `createLevelLists(TreeNode root)`
+- Salida ejemplo:
+  ```
+  Nivel 0: 4
+  Nivel 1: 2 7
+  Nivel 2: 1 3 6 9
+  ```
 
 ---
 
@@ -124,16 +113,19 @@ Devuelve una lista enlazada con los nodos por nivel. Si hay N niveles, se obtien
 Carpeta: `Ejercicio_04_depth`
 Calcula la profundidad máxima de un árbol binario (la longitud del camino más largo desde la raíz hasta una hoja).
 
-**Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3  
+- Calcula la profundidad (altura) máxima de un árbol binario.
+- Método principal: `maxDepth(TreeNode root)`
+- Árbol de prueba incluye una rama más profunda:
+  ```
+      4
+     / \
+    2   7
+   / \     
+  1   3
+ /
 8
-```
-
-**Output esperado:** `4`
+  ```
+- Salida esperada: `4`
 
 ---
 
